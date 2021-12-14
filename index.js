@@ -65,3 +65,53 @@ let empty = []
 empty ? console.log("truthy") : console.log("falsy") // truthy
 empty = {}
 empty ? console.log("truthy") : console.log("falsy") // truthy
+
+//Closure
+//lexical Scoping
+let name = 'John';
+
+function greeting() { 
+    let message = 'Hi';
+    console.log(message + ' '+ name);
+}
+
+function greeting() {
+  let message = 'Hi';
+
+  function sayHi() {
+      console.log(message);
+  }
+
+  sayHi();
+}
+
+greeting();
+
+//closures
+function greeting() {
+  let message = 'Hi';
+
+  function sayHi() {
+      console.log(message);
+  }
+
+  return sayHi;
+}
+let hi = greeting();
+hi(); // still can access the message variable
+//block scope
+{
+  let x = 2;
+}
+// x can NOT be used here
+{
+  var x = 2;
+}
+// x CAN be used here
+//local scope
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
+
+// code here can NOT use carName
