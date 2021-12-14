@@ -1,0 +1,15 @@
+{
+  "name": "js-learning",
+  "version": "1.0.0",
+  "description": "concepts about js basic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "rosilvaf1"
+  },
+  "author": "rosilvaf",
+  "license": "ISC"
+}
