@@ -41,30 +41,39 @@ console.log(sayHello())
 //funciton passed as an argument to other function 
 const sayHelloToAPerson = (greet, person) => { console.log(greet() + person)}
 sayHelloToAPerson(sayHello, ' juan')
+
 //function can be return other function
 const greeter = greeting => { return person => { return greeting + person} }
 const sayHiPerson = greeter ('Hi')
 console.log(sayHiPerson('Juan'))
+//block scope
+{
+  let x = 2;
+}
+// x can NOT be used here
+{
+  var x = 2;
+}
+// x CAN be used here
+//local scope
+function myFunction() {
+  let carName = "Volvo";
+  // code here CAN use carName
+}
 
+//global variable
+let carName = "Volvo";
+// code here can use carName
 
-console.log("The 7 falsy values")
-0 ? console.log("truthy") : console.log("falsy") // falsy
-0n ? console.log("truthy") : console.log("falsy") // falsy
-null ? console.log("truthy") : console.log("falsy") // falsy
-undefined ? console.log("truthy") : console.log("falsy") // falsy
-false ? console.log("truthy") : console.log("falsy") // falsy
-NaN ? console.log("truthy") : console.log("falsy") // falsy
-"" ? console.log("truthy") : console.log("falsy") // falsy
+function myFunction() {
+// code here can also use carName
+}
+//function Scope
+function myFunction() {
+  var carName = "Volvo";   // Function Scope
+}
 
-console.log("Some examples of truthy values")
-37 ? console.log("truthy") : console.log("falsy") // truthy
-37n ? console.log("truthy") : console.log("falsy") // truthy
-true ? console.log("truthy") : console.log("falsy") // truthy
-"😂" ? console.log("truthy") : console.log("falsy") // truthy
-let empty = []
-empty ? console.log("truthy") : console.log("falsy") // truthy
-empty = {}
-empty ? console.log("truthy") : console.log("falsy") // truthy
+// code here can NOT use carName
 
 //Closure
 //lexical Scoping
@@ -74,7 +83,7 @@ function greeting() {
     let message = 'Hi';
     console.log(message + ' '+ name);
 }
-
+//nested function
 function greeting() {
   let message = 'Hi';
 
@@ -99,19 +108,24 @@ function greeting() {
 }
 let hi = greeting();
 hi(); // still can access the message variable
-//block scope
-{
-  let x = 2;
-}
-// x can NOT be used here
-{
-  var x = 2;
-}
-// x CAN be used here
-//local scope
-function myFunction() {
-  let carName = "Volvo";
-  // code here CAN use carName
-}
 
-// code here can NOT use carName
+/*
+console.log("The 7 falsy values")
+0 ? console.log("truthy") : console.log("falsy") // falsy
+0n ? console.log("truthy") : console.log("falsy") // falsy
+null ? console.log("truthy") : console.log("falsy") // falsy
+undefined ? console.log("truthy") : console.log("falsy") // falsy
+false ? console.log("truthy") : console.log("falsy") // falsy
+NaN ? console.log("truthy") : console.log("falsy") // falsy
+"" ? console.log("truthy") : console.log("falsy") // falsy
+
+console.log("Some examples of truthy values")
+37 ? console.log("truthy") : console.log("falsy") // truthy
+37n ? console.log("truthy") : console.log("falsy") // truthy
+true ? console.log("truthy") : console.log("falsy") // truthy
+"😂" ? console.log("truthy") : console.log("falsy") // truthy
+let empty = []
+empty ? console.log("truthy") : console.log("falsy") // truthy
+empty = {}
+empty ? console.log("truthy") : console.log("falsy") // truthy
+*/
